@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ataage Agindaasonan - Digital Resource and Audio Pronunciations</title>
+    <meta name="description"
+        content="Digital resources for the Ojibwe card game, Ataage Agindaasonan. Find translations, audio, pronounciation help.">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --main-bg-color: #FFFBF0;
+    --main-brand-color: #1E4D42;
+    --main-text-color: #381E0A;
+    --main-font-weight: 400;
+    --header-font-weight: 800;
+    --border-color: #4F9682;
+    --button-font-weight: 650;
+    --body-line-height: 155%;
+    --body-letter-spacing: 2%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8eccb;
+    padding: 1.2rem;
+    font-family: "Nunito Sans", sans-serif;
+    color: var(--main-text-color);
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+}
+.logo-container {
+   text-align: center;
+}
+.logo{
+    width: 30%;
+padding-bottom: 1em;
+}
+
+header {
+    text-align: center;
+    background: var(--main-bg-color);
+    padding: 2rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+h2 {
+    font-size: 2rem;
+    letter-spacing: 1%;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.5rem;
+    letter-spacing: 1%;
+    margin-bottom: 1em;
+}
+
+.subtitle {
+    color: var(--border-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: var(--header-font-weight);
+    color: var(--main-brand-color);
+    font-family: "Merriweather", serif;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 165%;
+    letter-spacing: 2%;
+    margin-bottom: 1em;
+}
+
+.difficulty-lvl {
+    margin-top: 1em;
+}
+
+.word-card {
+    background: var(--main-bg-color);
+    padding: 2em;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.word-info {
+    flex: 1;
+    padding-left: 2em;
+}
+
+.card-img {
+    width: 25%;
+}
+
+.ojibwe {
+    margin-bottom: 5px;
+}
+
+.english {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.phonetic {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 0.5em;
+}
+
+audio {
+    margin-top: 2em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em;
+    background: var(--main-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.acknowledgment {
+    color: var(--border-color);
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+@media (max-width: 600px) {
+    h1, .subtitle{
+        text-align: center;
+    }
+    .word-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-left: 1em;
+    }
+    
+    .card-img {
+        width: 30%;
+    }
+    
+    .word-info {
+        padding-left: 0;
+        padding-top: 1em;
+    }
+    
+    audio {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+</style>
+
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/img/favicon/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8GZYBMZZZ"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-L8GZYBMZZZ'); </script>
+</head>
+
+<body>
+    <div class="container">
+         <div class="logo-container">
+                <a href="https://giigidomikinaak.ca/"><img class="logo" src="../ataage-digital/img/logo-stacked.svg"
+                        alt="Giigido Mikinaak logo"></a>
+            </div>
+        <header>
+            <h1>Ataage Agindaasonan</h1>
+            <h2 class="subtitle">Audio Pronunciations</h2>
+            <p>Our translations are a mix of direct translations and interpretations that have the same essence
+                as their English counter parts. In cases where interpretations are used- or if there are multiple
+                meanings, the direct translation will be shown.</p>
+
+            <p>Click play to hear each word pronounced by a fluent Anishinaabemowin speaker.</p>
+            <p>Be sure to bookmark this page so you can easily find it again!</p>
+
+        </header>
+
+        <!-- Difficultly modifiers -->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content difficulty">
+                    <h3 class="">Difficultly Modifiers</h3>
+                    <p>Here are ways you can adjust the game to match the players abilities.</p>
+                    <div class="difficulty-lvl">
+                        <h4>Normal</h4>
+                        <p>For normal difficulty, play as written on the instruction guide.</p>
+                    </div>
+                    <div class="difficulty-lvl">
+                        <h4 class="">Easy</h4>
+                        <p>Changing suit can be said in English without penalty. Saying an Anishinaabemowin word wrong
+                            will not be penalized.</p>
+                    </div>
+                    <div class="difficulty-lvl">
+                        <h4 class="">Easier</h4>
+                        <p>Changing suit can be said in English without penalty. Saying an Anishinaabemowin word wrong
+                            will not be penalized. Agindaasonan count goes up to 5 instead
+                            of 9.</p>
+                    </div>
+                    <div class="difficulty-lvl">
+                        <h4 class="">Hard</h4>
+                        <p>All action cards must be said in Anishinaabemowin.</p>
+                        <p> If you forget to say it (or forget the Anishinaabemowin word), another player can call it
+                            out by
+                            saying "Odaapin bezhig", and you must
+                            pick up a card. The call out must happen before the next player starters their turn.</p>
+                    </div>
+                    <div class="difficulty-lvl">
+                        <h4 class="">Harder</h4>
+                        <p>All action cards must be said in Anishinaabemowin. If you take too long to say an
+                            Anishinaabemowin word, another player can call it out. The group decides if it was right to
+                            call
+                            it out. Majority rules. Flip a coin for a tie-breaker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ataage Agindaasonan -->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Ataage Agindaasonan</h3>
+                    <p class="english">Counting cards</p>
+                    <p class="phonetic">Uh tah gay ug in daa so nun</p>
+                    <p class="direct">direct translation: counting (inanimate), playing cards, gambling cards</p>
+                    <audio controls>
+                        <source
+                            src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_01-ataage-agindaasonan.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Last Card short -->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Aazha Ishkawaach</h3>
+                    <p class="english">Last card</p>
+                    <p class="phonetic">Uh tah gay ug in daa so nun</p>
+                    <p class="direct">direct translation: counting (inanimate), playing cards, gambling cards</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_20-aazhashort.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Last Card long-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Aazha Ishkawaach Ataagen</h3>
+                    <p class="english">Last card</p>
+                    <p class="phonetic">Uh tah gay ug in daa so nun</p>
+                    <p class="direct">direct translation: counting (inanimate), playing cards, gambling cards</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_21-aazhalong.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Agosimaan-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/agosimaan.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Agosimaan</h3>
+                    <p class="english">Pumpkin</p>
+                    <p class="phonetic">Uh go see maa n</p>
+                    <p class="direct">Gourd, pumpkin, squash, melon</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_10-agosimaan.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manoomin-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/manoomin.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Manoomin</h3>
+                    <p class="english">Wild rice</p>
+                    <p class="phonetic">Muh noo min</p>
+                    <p class="direct">wild rice, rice</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_11-manoomin.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mandaamin-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/mandaamin.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Mandaamin</h3>
+                    <p class="english">Corn</p>
+                    <p class="phonetic">Mon daa min</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_12-mandaamin.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gitigade-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/gitigaade.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Gitigade</h3>
+                    <p class="english">Plant</p>
+                    <p class="phonetic">Gih ti guh day</p>
+                    <p class="direct">A plant</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bezhig-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/bezhig.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Bezhig</h3>
+                    <p class="english">One (1)</p>
+                    <p class="phonetic">Bay sh ick</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_26-bezhig.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Niizh-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/niizh.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Niizh</h3>
+                    <p class="english">Two (2)</p>
+                    <p class="phonetic">Knee sh</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_27-niizh.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Niswi-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/niswi.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Niswi</h3>
+                    <p class="english">Three (3)</p>
+                    <p class="phonetic">Nih swi</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_28-niswi.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Niiwin-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/niiwin.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Niiwin</h3>
+                    <p class="english">Four (4)</p>
+                    <p class="phonetic">Knee win</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_29-niiwin.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Naanan-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/naanan.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Naanan</h3>
+                    <p class="english">Five (5)</p>
+                    <p class="phonetic">Naa nun</p>
+                    <p class="direct">A plant</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_30-naanan.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ningodwaaswi-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/ningodwaaswi.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Ningodwaaswi</h3>
+                    <p class="english">Six (6)</p>
+                    <p class="phonetic">Nin god aa swi</p>
+                    <audio controls>
+                        <source
+                            src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_31-ningodwaaswi.mp3"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Niizhwaaswi-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/niizhwaaswi.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Niizhwaaswi</h3>
+                    <p class="english">Seven (7)</p>
+                    <p class="phonetic">Knee sh waa swi</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_32-niizhwaaswi.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nishwaaswi-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/nishwaaswi.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Nishwaaswi</h3>
+                    <p class="english">Eight (8)</p>
+                    <p class="phonetic">Ni sh waa swi</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_33-nishwaaswi.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zhaangaswi-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/zhaangaswi.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Zhaangaswi</h3>
+                    <p class="english">Nine (9)</p>
+                    <p class="phonetic">Zhaa ga swi</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_34-zhaangaswi.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gaawiin Giin-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/gaawiin giin.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Gaawiin Giin</h3>
+                    <p class="english">Not you</p>
+                    <p class="phonetic">Gaa ween geen</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_02-gaawiingiin.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Odaapin Niizh-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/odaapin niizh.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Odaapin Niizh</h3>
+                    <p class="english">Pick up 2</p>
+                    <p class="phonetic">Oh daa pin knee sh</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aaniganoo Tamagen Odaapin Niiwin-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/aaniganootamaagenodaapinniiwin.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Odaapin Niiwin, Aaniganoo Tamagen</h3>
+                    <p class="english">Change suit, pick up 4</p>
+                    <p class="phonetic">Oh daa pin knee win, aa ni ga new tuh muh gen</p>
+                    <p class="direct">Pick up 4, translate it</p>
+                    <div class="rule">
+                        <p>Say "odaapin niiwin, aaniganoo tamagen" and the name of the suit you would like to change it
+                            to.</p>
+                        <p>The next player picks up 4 cards and their turn is skipped.</p>
+                        <p>Playable on any colour</p>
+                    </div>
+                    <audio controls>
+                        <source
+                            src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_05-aaniganootamaagenodaapinniiwin-2.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                    <audio controls>
+                        <source
+                            src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_04-aaniganootamaagenodaapinniiwin-1.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aaniganoo Tamagen-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/aaniganootamaagen.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Aaniganoo Tamagen</h3>
+                    <p class="english">Change suit</p>
+                    <p class="phonetic">Aa ni ga new tuh muh gen</p>
+                    <p class="direct">Translate it</p>
+                    <div class="rule">
+                        <p>Say "Aaniganoo tamagen" and the name of the suit you would like to change it
+                            to. Your turn ends. </p>
+                        <p>Playable on any colour</p>
+                    </div>
+                    <audio controls>
+                        <source
+                            src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_04-aaniganootamaagenodaapinniiwin-1.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agindaasonan-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/agindaasonan.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Agindaasonan</h3>
+                    <p class="english">Counting</p>
+                    <p class="phonetic">Uh g in daa so nun</p>
+                    <p class="direct">Counting (inanimate)</p>
+                    <div class="rule">
+                        <p>The person who played leads the count in Anishinaabemowin (Ojibwe) to 9. Each player takes a
+                            turn saying a number until they reach 9 as a group.</p>
+                        <p>The first person to say a number wrong, draws a card and the count ends.</p>
+                        <p>If the count is
+                            successful, the leader picks a player to pick up 2 cards.</p>
+                        <p>The game continues as normal and the suit returns to what was last played.</p>
+                        <p>Playable on any colour.</p>
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_08-agindaasonan.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Azheshkaan-->
+        <div class="word-card row">
+            <img class="card-img" src="../ataage-digital/img/Azheshkaan.png"
+                alt="The page of a sketchbook with sketches of cards.">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Azheshkaan</h3>
+                    <p class="english">Go back</p>
+                    <p class="phonetic">Uh zhesh kaan</p>
+                    <div class="rule">
+                        <p>The play direction is reversed. Everyone says a number(1-9) as fast as they can. Last person
+                            to say a number draws a card. The turn ends. Suit returns to what was last played.</p>
+                        <p>Playable on any colour.</p>
+                    </div>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_03-azheshkaan.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ginigawinan-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Ginigawinan</h3>
+                    <p class="english">Shuffle the cards</p>
+                    <p class="phonetic">Gih ni guh win nun</p>
+                    <p class="direct">Mix it in</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Niintam ina?-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Niintam ina?</h3>
+                    <p class="english">Is it my turn</p>
+                    <p class="phonetic">Neen tam in a</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Niintam-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Niintam</h3>
+                    <p class="english">My turn</p>
+                    <p class="phonetic">Neen tam</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Giintam-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Giintam</h3>
+                    <p class="english">Your turn</p>
+                    <p class="phonetic">Geen tam</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wiintam-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Wiintam</h3>
+                    <p class="english">Their turn</p>
+                    <p class="phonetic">Ween tam</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Yetiye-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Yetiye</h3>
+                    <p class="english">You're going down</p>
+                    <p class="phonetic">Yet ih yay</p>
+                    <p class="direct">You're gonna get it.</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!--how do you say -->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Aaniin izhi ikidowan owe?</h3>
+                    <p class="english">How do you say this?</p>
+                    <p class="phonetic">Uh neen i shi ick ih doh wun o way</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ni bakinaage-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Ni bakinaage</h3>
+                    <p class="english">I win!</p>
+                    <p class="phonetic">Nih bah kin aa gay</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gi bakinaage-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Gi bakinaage</h3>
+                    <p class="english">You win!</p>
+                    <p class="phonetic">Gih bah kin aa gay</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ni bakinaago-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Ni bakinaago</h3>
+                    <p class="english">I lose.</p>
+                    <p class="phonetic">Nih bah kin aa goo</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- Miinawaa?-->
+        <div class="word-card row">
+            <div class="word-info">
+                <div class="card-content ">
+                    <h3 class="ojibwe">Miinawaa?</h3>
+                    <p class="english">Play again?</p>
+                    <p class="phonetic">Me nuh waa?</p>
+                    <audio controls>
+                        <source src="https://pub-5b809581cbc44044bae080f0b1ffb3f4.r2.dev/ataageAudio_09-gitigaade.wav"
+                            controlsList="nodownload" type="audio/mpeg">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+            </div>
+        </div>
+        <!-- final div -->
+    </div>
+
+    <footer>
+        <p class="acknowledgment">Chi-miigwech to Corey Whitford for sharing his voice and knowledge.</p>
+        <p>
+            &copy; Giigido Mikinaak
+            <script>document.write(new Date().getFullYear());</script>
+        </p>
+    </footer>
+    </div>
+</body>
+
+</html>

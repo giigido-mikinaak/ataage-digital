@@ -1,0 +1,9 @@
+# Audio files - don't upload these to GitHub
+*.mp3
+*.wav
+*.ogg
+/audio/
+
+# System files
+.DS_Store
+Thumbs.db
