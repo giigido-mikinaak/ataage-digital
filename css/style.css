@@ -1,0 +1,223 @@
+/* Universal Styling */
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --main-bg-color: #FFFBF0;
+    --main-brand-color: #1E4D42;
+    --main-text-color: #381E0A;
+    --main-font-weight: 400;
+    --header-font-weight: 650;
+    --border-color: #4F9682;
+    --button-font-weight: 650;
+    --body-line-height: 155%;
+    --body-letter-spacing: 2%;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    /* change to main */
+    background-color: #E0DECD;
+    font-family: "Nunito Sans", sans-serif;
+    color: var(--main-text-color);
+}
+
+main {
+    background-color: var(--main-bg-color);
+}
+
+.row{
+    display: flex;
+}
+
+
+/* Text Styles */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: var(--header-font-weight);
+    color: var(--main-brand-color);
+    font-family: "Merriweather", serif;
+}
+
+
+h2 {
+    font-size: 3rem;
+    letter-spacing: 1%;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 2rem;
+    letter-spacing: 1%;
+    margin-bottom: 1em;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 165%;
+    letter-spacing: 2%;
+    margin-bottom: 1em;
+}
+
+.btn {
+    background-color: var(--border-color);
+    font-family: 'Nunito Sans' !important;
+    font-weight: var(--button-font-weight) !important;
+    letter-spacing: 1%;
+    padding: 1em;
+    border-radius: .2em;
+    transition: 250ms ease-in-out;
+    margin-top: 1em;
+    width:fit-content;
+    text-align: center;
+
+    a {
+        color: var(--main-bg-color);
+        text-decoration: none;
+    }
+}
+
+.btn:hover {
+    background-color: #357462;
+}
+
+.btn-cta {
+    background-color: #F3AD14;
+
+    a {
+        color: #381E0A;
+
+    }
+}
+
+.btn-cta:hover {
+    background-color: #d5950a;
+}
+
+/* Sections styling */
+.sections {
+    padding-left: clamp(.01em, 12%, 15em);
+    padding-right: clamp(.01em, 12%, 15em);
+    padding-top: clamp(.01em, 5%, 7em);
+    padding-bottom: clamp(.01em, 5%, 7em);
+    justify-content: space-between;
+
+}
+
+
+.sections-content {
+    width: 50%;
+    align-self: center;
+
+    ul {
+        padding-left: 1em;
+        padding-bottom: 1em;
+
+    }
+}
+
+.sections img {
+    border: 3px solid;
+    border-color: var(--border-color);
+    border-radius: 1em;
+    width: 40%;
+    object-fit: cover;
+}
+
+/* tablet */
+@media screen and (max-width: 810px) {
+    .h2 {
+        margin-bottom: .5em !important;
+    }
+
+    .sections {
+        padding: 5%;
+    }
+
+    .sections{
+        width: 45%;
+    }
+    .subtitle,
+    h1 {
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .subtitle p {
+        display: inline;
+    }
+
+    .email .disclaimer {
+        padding: 0;
+        margin-bottom: 1em;
+    }
+}
+
+/* phone */
+@media screen and (max-width: 640px) {
+    .hero-content {
+    /* padding: 3em; */
+        right: 0;
+        .subtitle {
+            margin-bottom: 5em;
+        }
+    }
+    h2{
+        margin-top: 1.2em;
+        font-size: 1.6rem;
+    }
+
+    .sections{
+        padding: 2em;
+    }
+    .sections-content {
+        width: 100%;
+    }
+    .row {
+        flex-direction: column;
+    }
+
+    h2 {
+        margin-bottom: .2em !important;
+    }
+
+    P {
+        margin-bottom: .2em !important;
+    }
+}
+
+/*----------------------------------------------------------------------- 
+                    Social Styling
+-----------------------------------------------------------------------*/
+
+.socials {
+    margin-top: 1em;
+    min-height: 44px;
+}
+
+.socials>* {
+    min-width: 44px;
+    padding: 0 .25em;
+}
+
+.socials .ph {
+    font-size: 2rem;
+    display: inline-block;
+    color: var(--main-brand-color);
+
+}
+
+.socials a {
+    text-decoration: none;
+}
